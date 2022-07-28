@@ -1,0 +1,632 @@
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json not found in cache or force_download set to True, downloading to /tmp/tmpl_f9_sr3
+copying /tmp/tmpl_f9_sr3 to cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+creating metadata file for /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+removing temp file /tmp/tmpl_f9_sr3
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt not found in cache or force_download set to True, downloading to /tmp/tmpmclnvx63
+copying /tmp/tmpmclnvx63 to cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+creating metadata file for /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+removing temp file /tmp/tmpmclnvx63
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin not found in cache or force_download set to True, downloading to /tmp/tmpvxtj7gz5
+copying /tmp/tmpvxtj7gz5 to cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+creating metadata file for /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+removing temp file /tmp/tmpvxtj7gz5
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='tnews', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=3335, save_steps=3335, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Creating features from dataset file at /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/
+Writing example 0
+*** Example ***
+guid: train-0
+input_ids: 101 677 6440 3198 2110 4495 2797 3322 1510 702 679 977 8024 5439 2360 671 2584 722 678 2828 2797 3322 3035 749 8024 2157 7270 2897 1355 4873 6375 5439 2360 6608 8024 1920 2157 2582 720 4692 2521 6821 4905 752 8043 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 108 (id = 7)
+input length: 46
+*** Example ***
+guid: train-1
+input_ids: 101 1555 6617 4384 4413 5500 819 3300 7361 1062 1385 1068 754 2454 3309 1726 1908 677 3862 6395 1171 769 3211 2792 2190 1062 1385 8109 2399 2399 2428 2845 1440 4638 752 1400 2144 3417 7309 6418 1141 4638 1062 1440 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 104 (id = 4)
+input length: 45
+*** Example ***
+guid: train-2
+input_ids: 101 6858 6814 704 792 1062 1385 743 749 753 2797 2791 8024 7674 802 6963 802 749 8024 4385 1762 1297 2157 679 2682 1297 749 511 2582 720 1905 4415 8043 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 106 (id = 5)
+input length: 34
+*** Example ***
+guid: train-3
+input_ids: 101 8271 2399 1343 915 5384 3172 4692 686 4518 3344 2533 5709 1914 2208 7178 8043 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 112 (id = 10)
+input length: 18
+*** Example ***
+guid: train-4
+input_ids: 101 1178 7557 1143 4638 702 2595 7484 3173 8024 7440 3209 4633 1921 4344 2137 1169 4276 3173 1501 7674 1355 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 109 (id = 8)
+input length: 23
+Writing example 10000
+Writing example 20000
+Writing example 30000
+Writing example 40000
+Writing example 50000
+Saving features into cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_train_bert-base-chinese_128_tnews
+***** Running training *****
+  Num examples = 53360
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 10005
+Creating features from dataset file at /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/
+Writing example 0
+*** Example ***
+guid: dev-0
+input_ids: 101 3736 4541 2512 4494 4494 1750 5632 2864 8024 6837 722 6235 2428 4994 6821 720 1962 4692 8024 5401 1429 2471 671 1147 752 4289 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 102 (id = 2)
+input length: 28
+*** Example ***
+guid: dev-1
+input_ids: 101 809 5682 1154 1920 6226 3563 4958 6159 2458 1993 8013 823 3306 1914 702 1092 752 4680 3403 6901 6878 2802 1140 8024 6292 6241 2190 5023 1353 1140 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 110 (id = 9)
+input length: 32
+*** Example ***
+guid: dev-2
+input_ids: 101 1139 3408 671 1928 4343 755 2938 8209 1039 8024 4955 4994 6443 5543 5010 1168 3297 1400 8013 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 104 (id = 4)
+input length: 21
+*** Example ***
+guid: dev-3
+input_ids: 101 809 1184 2523 4125 4638 2349 7188 711 862 4385 1762 1372 2099 679 2990 8043 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 109 (id = 8)
+input length: 18
+*** Example ***
+guid: dev-4
+input_ids: 101 868 711 671 1399 6983 2421 794 689 782 1447 8024 872 5307 1325 6814 2791 2145 1525 763 4294 1166 3766 3300 5162 6574 4638 6121 711 8043 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 112 (id = 10)
+input length: 31
+Saving features into cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5522
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-3335/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-3335/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-3335
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5669
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-6670/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-6670/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-6670
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5688
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-10005/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-10005/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-10005
+ global_step = 10005, average loss = 1.1137391008209552
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/pytorch_model.bin
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/config.json
+Model config {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/pytorch_model.bin
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/tokenizer_config.json
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/tokenizer_config.json
+Evaluate the following checkpoints: ['/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert']
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/config.json
+Model config {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/pytorch_model.bin
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5688
+Process rank: -1, device: cuda, n_gpu: 2, distributed training: False, 16-bits training: False
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='tnews', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=3335, save_steps=3335, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=2, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_train_bert-base-chinese_128_tnews
+***** Running training *****
+  Num examples = 53360
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 32
+  Gradient Accumulation steps = 1
+  Total optimization steps = 5004
+Process rank: -1, device: cuda, n_gpu: 2, distributed training: False, 16-bits training: False
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='tnews', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=3335, save_steps=3335, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=2, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_train_bert-base-chinese_128_tnews
+***** Running training *****
+  Num examples = 53360
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 32
+  Gradient Accumulation steps = 1
+  Total optimization steps = 5004
+Process rank: -1, device: cuda, n_gpu: 2, distributed training: False, 16-bits training: False
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='tnews', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=3335, save_steps=3335, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=2, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_train_bert-base-chinese_128_tnews
+***** Running training *****
+  Num examples = 53360
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 32
+  Gradient Accumulation steps = 1
+  Total optimization steps = 5004
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='tnews', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=3335, save_steps=3335, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_train_bert-base-chinese_128_tnews
+***** Running training *****
+  Num examples = 53360
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 10005
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='tnews', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=3335, save_steps=3335, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_train_bert-base-chinese_128_tnews
+***** Running training *****
+  Num examples = 53360
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 10005
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5572
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-3335/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-3335/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-3335
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.566
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-6670/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-6670/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-6670
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5671
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-10005/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-10005/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/checkpoint-10005
+ global_step = 10005, average loss = 2.5359769501547884
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/pytorch_model.bin
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/config.json
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/pytorch_model.bin
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/tokenizer_config.json
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/tokenizer_config.json
+Evaluate the following checkpoints: ['/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert']
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/config.json
+Model config {
+  "alpha": 0.3,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "tnews",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 15,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/tnews_output/bert/pytorch_model.bin
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/tnews/cached_dev_bert-base-chinese_128_tnews
+********* Running evaluation  ********
+  Num examples = 10000
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.5671

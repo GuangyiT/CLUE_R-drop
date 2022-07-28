@@ -1,0 +1,558 @@
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file ./prev_trained_model/chinese-roberta-wwm-ext/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+Model name './prev_trained_model/chinese-roberta-wwm-ext' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './prev_trained_model/chinese-roberta-wwm-ext' is a path or url to a directory containing tokenizer files.
+Didn't find file ./prev_trained_model/chinese-roberta-wwm-ext/added_tokens.json. We won't load it.
+Didn't find file ./prev_trained_model/chinese-roberta-wwm-ext/special_tokens_map.json. We won't load it.
+Didn't find file ./prev_trained_model/chinese-roberta-wwm-ext/tokenizer_config.json. We won't load it.
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/vocab.txt
+loading file None
+loading file None
+loading file None
+loading weights file ./prev_trained_model/chinese-roberta-wwm-ext/pytorch_model.bin
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/', model_type='bert', model_name_or_path='./prev_trained_model/chinese-roberta-wwm-ext', task_name='afqmc', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=2146, save_steps=2146, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_train_chinese-roberta-wwm-ext_128_afqmc
+***** Running training *****
+  Num examples = 34334
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 6438
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7254402224281742
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7407321594068582
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.744902687673772
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438
+ global_step = 6438, average loss = 0.9618850445878843
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Evaluate the following checkpoints: ['/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert']
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.744902687673772
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file ./prev_trained_model/chinese-roberta-wwm-ext/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+Model name './prev_trained_model/chinese-roberta-wwm-ext' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './prev_trained_model/chinese-roberta-wwm-ext' is a path or url to a directory containing tokenizer files.
+Didn't find file ./prev_trained_model/chinese-roberta-wwm-ext/added_tokens.json. We won't load it.
+Didn't find file ./prev_trained_model/chinese-roberta-wwm-ext/special_tokens_map.json. We won't load it.
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/vocab.txt
+loading file None
+loading file None
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/tokenizer_config.json
+loading weights file ./prev_trained_model/chinese-roberta-wwm-ext/pytorch_model.bin
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/', model_type='bert', model_name_or_path='./prev_trained_model/chinese-roberta-wwm-ext', task_name='afqmc', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=2146, save_steps=2146, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_train_chinese-roberta-wwm-ext_128_afqmc
+***** Running training *****
+  Num examples = 34334
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 6438
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file ./prev_trained_model/chinese-roberta-wwm-ext/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+Model name './prev_trained_model/chinese-roberta-wwm-ext' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './prev_trained_model/chinese-roberta-wwm-ext' is a path or url to a directory containing tokenizer files.
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/vocab.txt
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/added_tokens.json
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/special_tokens_map.json
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/tokenizer_config.json
+loading weights file ./prev_trained_model/chinese-roberta-wwm-ext/pytorch_model.bin
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/', model_type='bert', model_name_or_path='./prev_trained_model/chinese-roberta-wwm-ext', task_name='afqmc', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=2146, save_steps=2146, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_train_chinese-roberta-wwm-ext_128_afqmc
+***** Running training *****
+  Num examples = 34334
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 6438
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7078313253012049
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7351714550509731
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7360982391102873
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438
+ global_step = 6438, average loss = 0.48560088548581304
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Evaluate the following checkpoints: ['/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert']
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7360982391102873
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file ./prev_trained_model/chinese-roberta-wwm-ext/config.json
+Model config {
+  "alpha": 0.1,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "directionality": "bidi",
+  "eos_token_id": 2,
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+Model name './prev_trained_model/chinese-roberta-wwm-ext' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './prev_trained_model/chinese-roberta-wwm-ext' is a path or url to a directory containing tokenizer files.
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/vocab.txt
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/added_tokens.json
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/special_tokens_map.json
+loading file ./prev_trained_model/chinese-roberta-wwm-ext/tokenizer_config.json
+loading weights file ./prev_trained_model/chinese-roberta-wwm-ext/pytorch_model.bin
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/', model_type='bert', model_name_or_path='./prev_trained_model/chinese-roberta-wwm-ext', task_name='afqmc', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=2146, save_steps=2146, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_train_chinese-roberta-wwm-ext_128_afqmc
+***** Running training *****
+  Num examples = 34334
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 6438
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7078313253012049
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7351714550509731
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7360982391102873
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438
+ global_step = 6438, average loss = 0.48560088548581304
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "directionality": "bidi",
+  "eos_token_id": 2,
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Evaluate the following checkpoints: ['/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert']
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "directionality": "bidi",
+  "eos_token_id": 2,
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_chinese-roberta-wwm-ext_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7360982391102873

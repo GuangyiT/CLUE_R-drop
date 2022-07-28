@@ -1,0 +1,249 @@
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-config.json from cache at /home/tangguangyi/.cache/torch/transformers/8a3b1cfe5da58286e12a0f5d7d182b8d6eca88c08e26c332ee3817548cf7e60a.f12a4f986e43d8b328f5b067a641064d67b91597567a06c7b122d1ca7dfd9741
+Model config {
+  "alpha": 0.1,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/tangguangyi/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/tangguangyi/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(data_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/', model_type='bert', model_name_or_path='bert-base-chinese', task_name='afqmc', output_dir='/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert', config_name='', tokenizer_name='', cache_dir='', max_seq_length=128, do_train=True, do_eval=True, do_predict=False, do_lower_case=True, per_gpu_train_batch_size=16, per_gpu_eval_batch_size=16, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.01, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=3.0, max_steps=-1, warmup_proportion=0.1, logging_steps=2146, save_steps=2146, eval_all_checkpoints=False, predict_checkpoints=0, no_cuda=False, overwrite_output_dir=True, overwrite_cache=False, seed=42, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=1, device=device(type='cuda'), output_mode='classification')
+Creating features from dataset file at /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/
+Writing example 0
+*** Example ***
+guid: train-0
+input_ids: 101 6010 6009 955 1446 5023 7583 6820 3621 1377 809 2940 2768 1044 2622 1400 3315 1408 102 955 1446 3300 1044 2622 1168 3309 6820 3315 1408 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 30
+*** Example ***
+guid: train-1
+input_ids: 101 6010 6009 5709 1446 6432 2769 6824 5276 671 3613 102 6010 6009 5709 1446 6824 5276 6121 711 3221 784 720 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 24
+*** Example ***
+guid: train-2
+input_ids: 101 2376 2769 4692 671 678 3315 3299 5709 1446 6572 1296 3300 3766 3300 5310 3926 102 678 3299 5709 1446 6572 1296 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 25
+*** Example ***
+guid: train-3
+input_ids: 101 6010 6009 955 1446 1914 7270 3198 7313 5341 1394 6397 844 671 3613 102 955 1446 2533 6397 844 1914 719 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 24
+*** Example ***
+guid: train-4
+input_ids: 101 2769 4638 5709 1446 6572 1296 3221 115 115 115 8024 6820 3621 2582 720 3221 115 115 115 102 2769 4638 5709 1446 8024 3299 5310 1139 3341 6432 6375 2769 6820 115 115 115 1039 8024 2769 5632 2346 5050 749 671 678 6422 5301 1399 1296 2769 2418 6421 6820 115 115 115 1039 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 59
+Writing example 10000
+Writing example 20000
+Writing example 30000
+Saving features into cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_train_bert-base-chinese_128_afqmc
+***** Running training *****
+  Num examples = 34334
+  Num Epochs = 3
+  Instantaneous batch size per GPU = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 1
+  Total optimization steps = 6438
+Creating features from dataset file at /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/
+Writing example 0
+*** Example ***
+guid: dev-0
+input_ids: 101 1352 1282 671 5709 1446 2990 7583 1762 1525 102 7027 1377 809 2990 5709 1446 7583 2428 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 20
+*** Example ***
+guid: dev-1
+input_ids: 101 5709 1446 3118 2898 7770 7188 4873 3118 802 1408 102 711 784 720 1351 802 2140 679 3118 2898 5709 1446 802 3621 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 26
+*** Example ***
+guid: dev-2
+input_ids: 101 2769 4638 6010 6009 5709 1446 3118 802 7032 7583 2582 720 833 3300 7361 1169 102 2769 1168 3118 802 2140 2141 860 2421 3867 6589 4500 5709 1446 3118 802 1358 7032 7583 7361 1169 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 39
+*** Example ***
+guid: dev-3
+input_ids: 101 711 784 720 3300 5709 1446 7583 2428 679 5543 1146 3309 802 3621 102 5709 1446 1146 3309 7583 2428 679 6639 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 25
+*** Example ***
+guid: dev-4
+input_ids: 101 6615 1501 679 5543 6392 5390 4500 5709 1446 802 3621 102 2582 720 679 5543 5709 1446 1146 3309 802 3621 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 24
+Saving features into cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_bert-base-chinese_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7177942539388322
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-2146
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_bert-base-chinese_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7370250231696015
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-4292
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_bert-base-chinese_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7405004633920297
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438/pytorch_model.bin
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/checkpoint-6438
+ global_step = 6438, average loss = 0.47196335756920366
+Saving model checkpoint to /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert
+Configuration saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model weights saved in /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Model name '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming '/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert' is a path or url to a directory containing tokenizer files.
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/vocab.txt
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/added_tokens.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/special_tokens_map.json
+loading file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/tokenizer_config.json
+Evaluate the following checkpoints: ['/home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert']
+loading configuration file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/config.json
+Model config {
+  "alpha": 0.1,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "afqmc",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/afqmc_output/bert/pytorch_model.bin
+Loading features from cached file /home/tangguangyi/project/nlp_project/CLUE/baselines/models_pytorch/classifier_pytorch/CLUEdatasets/afqmc/cached_dev_bert-base-chinese_128_afqmc
+********* Running evaluation  ********
+  Num examples = 4316
+  Batch size = 16
+******** Eval results  ********
+ dev: acc = 0.7405004633920297
